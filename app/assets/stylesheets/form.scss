@@ -1,0 +1,18 @@
+@import "bootstrap";
+
+/******************************
+  Form Elements 
+******************************/
+
+.form-section {
+  @extend .form-group;
+}
+
+.enter-text {
+  @extend .form-control;
+}
+
+.submit-form {
+  @extend .btn;
+  @extend .btn-success;
+}

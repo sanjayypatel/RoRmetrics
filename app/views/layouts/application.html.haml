@@ -2,15 +2,24 @@
 %html
   %head
     %title RoRmetrics
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %h1 RoRmetrics
-    - if user_signed_in?
-      %h1= current_user.email
-      %h2= link_to "Sign Out", destroy_user_session_path, method: :delete
-    - else
-      %h2= link_to "Sign In", new_user_session_path
-      %h2= link_to "Sign Up", new_user_registration_path
-    = yield
+    .site-wrapper
+      %nav.navigation
+        .navigation-header
+          = link_to root_path, class: 'navigation-brand' do
+            %span.glyphicon.glyphicon-stats= " RoRmetrics"
+        %ul.navigation-left
+          %li= link_to "Test Button", root_path
+        %ul.navigation-right
+          - if user_signed_in?
+            %li= link_to current_user.email, edit_user_registration_path
+            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+          - else
+            %li= link_to "Sign In", new_user_session_path
+            %li= link_to "Sign Up", new_user_registration_path
+      .app-content
+        = yield
