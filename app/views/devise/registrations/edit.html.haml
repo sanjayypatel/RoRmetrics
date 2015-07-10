@@ -21,6 +21,13 @@
       = f.password_field :current_password, autocomplete: "off", class: 'enter-text'
     .form-section
       = f.submit "Update", class: 'submit-form'
+  .content-header Edit personal information
+  = form_for(current_user) do |f|
+    .form-section
+      = f.label :name
+      = f.text_field :name, placeholder: "Enter name", autofocus: true, class: 'enter-text'
+    .form-section
+      = f.submit "Update", class: 'submit-form'
   .warning-header Cancel my account
   %p
     Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}

@@ -3,8 +3,11 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .form-section
+      = f.label :name
+      = f.text_field :name, autofocus: true, class: 'enter-text'
+    .form-section
       = f.label :email
-      = f.email_field :email, autofocus: true, class: 'enter-text'
+      = f.email_field :email, class: 'enter-text'
     .form-section
       = f.label :password
       - if @validatable
