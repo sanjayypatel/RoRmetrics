@@ -12,7 +12,8 @@
         .navigation-header
           = link_to "RoRmetrics", root_path, class: 'navigation-brand', class: 'navigation-brand'
         %ul.navigation-left
-          %li= link_to "Test Button", root_path
+          - if user_signed_in?
+            %li= link_to "Applications", registered_applications_path
         %ul.navigation-right
           - if user_signed_in?
             %li= link_to current_user.email, edit_user_registration_path

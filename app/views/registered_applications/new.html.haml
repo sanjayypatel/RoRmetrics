@@ -1,0 +1,6 @@
+.main-content
+  .content-header New Application
+  .content-subheader Register a new application with RoRmetrics.
+  = render partial: 'registered_applications/form', locals: { registered_application: @registered_application}
+.sidebar
+  = render partial: 'layouts/sidebar', locals: {registered_application: nil}

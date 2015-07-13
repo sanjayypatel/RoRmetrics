@@ -1,0 +1,9 @@
+= form_for registered_application do |f|
+  .form-section
+    = f.label :name
+    = f.text_field :name, class: 'enter-text', placeholder: 'Enter Application Name', autocomplete: :off
+  .form-section
+    = f.label :url
+    = f.url_field :url, class: 'enter-text', placeholder: 'Application URL', autocomplete: :off
+  .form-section
+    = f.submit "Save", class: 'submit-form'

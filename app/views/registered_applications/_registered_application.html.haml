@@ -1,0 +1,10 @@
+.content-text
+  URL:
+  = link_to registered_application.url, registered_application.url
+.content-text
+  Registered:
+  = registered_application.created_at.strftime("%B %d, %Y")
+  by 
+  = registered_application.user.name
+= link_to "Application Settings", edit_registered_application_path(registered_application), class: 'edit-content'
+= link_to "Delete", @registered_application, method: :delete, class: 'delete-content', data: { confirm: 'Are you sure you want to delete this application?' }

@@ -1,0 +1,7 @@
+.main-content
+  .content-header Registered Applications
+  .content-subheader All of your registered applications are listed here.
+  - @registered_applications.each do |registered_application|
+    =render partial: 'registered_applications/summary', locals: {registered_application: registered_application}
+.sidebar
+  = render partial: 'layouts/sidebar', locals: {registered_application: nil}

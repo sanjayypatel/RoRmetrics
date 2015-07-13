@@ -1,0 +1,7 @@
+.main-content
+  .content-header= @registered_application.name
+  .content-subheader Edit application details.
+  = link_to "Delete", @registered_application, method: :delete, class: 'delete-content', data: { confirm: 'Are you sure you want to delete this application?' }
+  = render partial: 'registered_applications/form', locals: { registered_application: @registered_application}
+.sidebar
+  = render partial: 'layouts/sidebar', locals: {registered_application: @registered_application}
