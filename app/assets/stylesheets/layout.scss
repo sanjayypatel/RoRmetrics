@@ -149,10 +149,26 @@ body {
 
 .summary-header {
   font-size: 3rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .summary-subheader {
   font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/******************************
+  Events Views 
+******************************/
+
+.summarize-event {
+  padding-left: 1rem;
   padding-bottom: 1rem;
+  border-left: 10px lightgrey solid;
+  margin: 2rem 0;
+}
+
+.event-grouping {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
