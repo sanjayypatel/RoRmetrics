@@ -4,6 +4,8 @@ class API::EventsController < ApplicationController
   before_filter :set_access_control_headers
 
   def create
+    # debugging code - DELETE NEXT COMMIT
+    # puts ">>> params: #{params}"
     registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
 
     if registered_application.nil?

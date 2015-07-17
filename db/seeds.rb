@@ -12,7 +12,12 @@ member.skip_confirmation!
 member.save!
 
 
-
+app = RegisteredApplication.new(
+  name: 'wiki-pocket',
+  url: "http://localhost:4000",
+  user: member
+)
+app.save!
 
 10.times do |n|
   app = RegisteredApplication.new(
