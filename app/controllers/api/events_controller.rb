@@ -4,8 +4,9 @@ class API::EventsController < ApplicationController
   before_filter :set_access_control_headers
 
   def create
-    # debugging code - DELETE NEXT COMMIT
-    # puts ">>> params: #{params}"
+
+    return head 200 if request.method == "OPTIONS"
+
     registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
 
     if registered_application.nil?
@@ -23,7 +24,7 @@ class API::EventsController < ApplicationController
   def set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-    headers['Access-Control-Allow-Headers']  = 'Content-Type'
+    headers['Access-Control-Allow-Headers']  = 'Content-Type, application/json'
   end
 
 
