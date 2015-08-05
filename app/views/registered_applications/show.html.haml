@@ -2,5 +2,12 @@
   .content-header= @registered_application.name
   .content-subheader Application Details
   = render partial: 'registered_applications/registered_application', locals: {registered_application: @registered_application} 
+  .content-header
+    = "Application Events (#{@registered_application.events.count} total)"
+  - @grouped_events.keys.sort.each do |event_name|
+    .content-subheader
+      = "#{event_name} (#{@grouped_events[event_name].count})"
+    - @grouped_events[event_name].each do |event|
+      = render partial: 'events/event', locals: {event: event}
 .sidebar
   = render partial: 'layouts/sidebar', locals: {registered_application: @registered_application}
