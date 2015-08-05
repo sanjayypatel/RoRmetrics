@@ -45,7 +45,6 @@ body {
 /* app views will use .main-content/.sidebar split or .centered-content*/
 .main-content {
   @extend .col-md-8;
-  border-right: 1px lightgrey solid;
 }
 .sidebar {
   @extend .col-md-4;
@@ -65,21 +64,95 @@ body {
   padding-bottom: 0.5rem;
 }
 
+.content-text {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .warning-header {
   @extend .content-header;
   color: red;
 }
 
+.edit-content {
+  @extend .btn;
+  @extend .btn-xs;
+  @extend .btn-info;
+  border-radius: 0px;
+  margin-bottom: 2rem;
+}
+
+.delete-content {
+  @extend .btn;
+  @extend .btn-xs;
+  @extend .btn-danger;
+  border-radius: 0px;
+  margin-bottom: 2rem;
+}
 
 
+/******************************
+  RegisteredApplication Views 
+******************************/
 
+.sidebar-header {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px darkgrey solid;
+}
 
+.sidebar-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
 
+.sidebar-link {
+  @extend .btn;
+  @extend .btn-xs;
+  @extend .btn-link;
+}
 
+.sidebar-spacer {
+  margin: 4rem 0;
+}
 
+/******************************
+  Form Elements 
+******************************/
 
+.form-section {
+  @extend .form-group;
+}
 
+.enter-text {
+  @extend .form-control;
+}
 
+.submit-form {
+  @extend .btn;
+  @extend .btn-success;
+  margin-bottom: 2rem;
+  border-radius: 0px;
+}
 
+/******************************
+  RegisteredApplication Views 
+******************************/
 
+.summarize-application {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  border-left: 10px darkgrey solid;
+  border-top: 1px darkgrey solid;
+  margin: 2rem 0;
+}
 
+.summary-header {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.summary-subheader {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}

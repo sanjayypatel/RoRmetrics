@@ -1,0 +1,6 @@
+.main-content
+  .content-header= @registered_application.name
+  .content-subheader Application Details
+  = render partial: 'registered_applications/registered_application', locals: {registered_application: @registered_application} 
+.sidebar
+  = render partial: 'layouts/sidebar', locals: {registered_application: @registered_application}

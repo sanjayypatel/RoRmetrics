@@ -1,0 +1,5 @@
+.summarize-application
+  .summary-header= link_to registered_application.name, registered_application_path(registered_application)
+  .summary-subheader
+    URL:
+    = link_to registered_application.url, registered_application.url
